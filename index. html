@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى حبيبتي</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,400;1,700&family=Great+Vibes&family=Cinzel:wght@700&display=swap');
+
+        body {
+            margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;
+            background-color: #1a0205;
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://i.ibb.co/TqYMmHgD/image-0.png');
+            background-size: cover; background-position: center; overflow: hidden; touch-action: none;
+        }
+
+        #hearts-bg { position: absolute; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+
+        .book-wrapper { position: relative; width: 330px; height: 480px; perspective: 2000px; z-index: 10; }
+
+        .page {
+            position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+            transform-origin: left center; transition: transform 1.2s ease-in, opacity 0.5s;
+            cursor: pointer; z-index: var(--z); will-change: transform, opacity;
+        }
+
+        /* حل الرعشة والفوكس */
+        .page.flipped { transform: rotateY(-180deg) scale(0.8); opacity: 0; visibility: hidden; pointer-events: none; }
+
+        .page-front {
+            position: absolute; width: 100%; height: 100%; padding: 40px 30px; box-sizing: border-box;
+            background: #f4e4bc; background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            border-radius: 2px 15px 15px 2px; box-shadow: inset 15px 0 30px rgba(0,0,0,0.15), 5px 5px 20px rgba(0,0,0,0.4);
+            display: flex; flex-direction: column;
+        }
+
+        .cover-front {
+            background-image: linear-gradient(135deg, rgba(81, 0, 15, 0.9) 0%, rgba(142, 14, 36, 0.95) 100%), url('https://i.ibb.co/TqYMmHgD/image-0.png');
+            background-size: cover; background-position: center; justify-content: center; align-items: center;
+            outline: 10px solid #d4af37; outline-offset: -20px; overflow: hidden;
+        }
+
+        .cover-front::after {
+            content: ''; position: absolute; top: 0; left: -150%; width: 150%; height: 100%;
+            background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.02) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.02) 60%, transparent 100%);
+            transform: skewX(-25deg); animation: light-swipe 12s infinite ease-in-out;
+        }
+
+        @keyframes light-swipe { 0% { left: -150%; } 40% { left: 150%; } 100% { left: 150%; } }
+
+        .cover-title { font-family: 'Great Vibes', cursive; font-size: 4.5rem; color: #d4af37; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin: 0; }
+
+        .content { font-size: 1.4rem; color: #3d2b1f; line-height: 1.8; text-align: center; font-style: italic; }
+
+        .timer-badge {
+            background: rgba(40, 0, 5, 0.9); border: 1px solid #d4af37; color: #d4af37;
+            padding: 10px 25px; border-radius: 50px; margin-top: 30px; font-size: 1rem; direction: ltr;
+            position: absolute; bottom: -60px;
+        }
+
+        .heart { position: absolute; color: #ff4d6d; animation: float 6s infinite linear; }
+        @keyframes float { 0% { transform: translateY(110vh) scale(0.5); opacity: 0.8; } 100% { transform: translateY(-10vh) scale(1.2); opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div id="hearts-bg"></div>
+    <div class="main-ui" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="book-wrapper">
+            <div class="page" style="--z: 1;"><div class="page-front"><div class="content">ربنا يخليكي ليا يا حبيبة بجد وميحرمنيش منك ابدا طول العمر يارب.. ان شاء الله تبقي ليا ومن نصيبي وهعمل كل اللي اقدر عليه عشان نفضل مع بعض لآخر العمر. ❤️</div></div></div>
+            <div class="page" onclick="this.classList.add('flipped')" style="--z: 2;"><div class="page-front"><div class="content">وانا اسف من كل قلبي علي كل مره زعلتك فيها مني يا حبيبه.. انتي المفروض تكوني مبسوطه وفرحانه طول عمرك. هفضل معاكي وعمري ما اسيبك أبداً لأنك تستاهلي كل حاجة حلوة.</div></div></div>
+            <div class="page" onclick="this.classList.add('flipped')" style="--z: 3;"><div class="page-front"><div class="content">انتي قلبي و روحي وشريكه حياتي بجد وصاحبتي واقرب حد لقلبي واكتر حد بحبه في الدنيا دي كلها.. هفضل احبك وعمري في يوم ما هبطل احبك لآخر نفس في حياتي.</div></div></div>
+            <div class="page" onclick="this.classList.add('flipped')" style="--z: 4;"><div class="page-front"><div class="content">حبيبه انا مهما قعدت اوصف مش هيوفي كميه الحب اللي في قلبي ليكي والله.. اللي عملته ده ولا حاجه من اللي جوايا ليكي يا أغلى حد عندي في الدنيا.</div></div></div>
+            <div class="page" onclick="this.classList.add('flipped')" style="--z: 5;"><div class="page-front cover-front"><span style="font-family: 'Cinzel'; color:#d4af37; letter-spacing:5px; font-size:0.8rem;">TO MY FOREVER</span><h1 class="cover-title">Habobty</h1><div style="color:#d4af37; margin-top:10px; font-size: 1.5rem;">❤️</div></div></div>
+        </div>
+        <div class="timer-badge" id="timer"></div>
+    </div>
+    <script>
+        const startDate = new Date(2025, 7, 19); 
+        function updateTimer() {
+            const now = new Date(); const diff = now - startDate;
+            const d = Math.floor(diff / 86400000); const h = Math.floor((diff / 3600000) % 24);
+            const m = Math.floor((diff / 60000) % 60); const s = Math.floor((diff / 1000) % 60);
+            document.getElementById('timer').innerText = `${d}D ${h}H ${m}M ${s}S ❤️`;
+        }
+        setInterval(updateTimer, 1000); updateTimer();
+        setInterval(() => {
+            const heart = document.createElement('div'); heart.className = 'heart'; heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw'; heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            document.getElementById('hearts-bg').appendChild(heart); setTimeout(() => heart.remove(), 6000);
+        }, 450);
+    </script>
+</body>
+</html>
